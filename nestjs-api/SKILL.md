@@ -69,12 +69,12 @@ project already exists, read the answers out of the code rather than asking.
 | 8 | **Extra data sources** | single DB · additional read-only source(s) · several read/write | `DatabaseModule`, `@InjectRepository(Entity, name)` |
 | 9 | **Config validation** | Joi (≥ 18) · Zod/Standard Schema · class-validator `validate()` | `config/validation.ts`, boot behaviour |
 | 10 | **Test runner** | Jest (CommonJS default) · Vitest (ESM default) | specs, e2e config, CI |
-| 11 | **Package manager** | bun · pnpm · npm | scripts, CI, lockfile |
+| 11 | **Package manager** | npm · pnpm · bun | scripts, CI, lockfile |
 
 Defaults when a project has no opinion: **1** CommonJS, **2** first option, **3**
 class-validator, **4** Passport JWT in an httpOnly cookie with bearer fallback, **5**
 permission registry, **6** `@Audit` on mutations, **7** TypeORM + migrations, **8** single DB,
-**9** Joi, **10** Jest.
+**9** Joi, **10** Jest, **11** npm.
 
 > Question 3 shapes Swagger. The `*.doc.ts` pattern documents *responses* the same way under
 > both options, but request bodies are documented by `@ApiProperty` on class DTOs (or the CLI

@@ -29,7 +29,7 @@ unit tests pass against exactly these versions:
 ## Rules
 
 - **Install without a version** so the package manager resolves the latest
-  (`bun add @nestjs/common @nestjs/core …`), then commit the lockfile. Don't copy version ranges
+  (`npm install @nestjs/common @nestjs/core …`), then commit the lockfile. Don't copy version ranges
   from an older project.
 - **Keep the `@nestjs/*` packages on the same major.** Mixing 11 and 12 fails at runtime with
   duplicate-module and metadata errors.
@@ -53,14 +53,14 @@ unit tests pass against exactly these versions:
 ## Install line
 
 ```bash
-bun add @nestjs/common @nestjs/core @nestjs/platform-express @nestjs/config @nestjs/swagger \
+npm install @nestjs/common @nestjs/core @nestjs/platform-express @nestjs/config @nestjs/swagger \
   @nestjs/typeorm @nestjs/passport @nestjs/jwt @nestjs/throttler @nestjs/terminus \
   typeorm pg passport passport-jwt class-validator class-transformer joi cookie-parser \
   rxjs reflect-metadata dotenv
 
-bun add -d @nestjs/cli @nestjs/schematics @nestjs/testing typescript supertest \
+npm install -D @nestjs/cli @nestjs/schematics @nestjs/testing typescript supertest \
   @types/express @types/cookie-parser @types/passport-jwt @types/supertest @types/node
 ```
 
-Swap `bun add` for `pnpm add` / `npm i` per decision gate 11, and add the test runner from
+Swap `npm install` for `pnpm add` / `bun add` per decision gate 11, and add the test runner from
 decision gate 10 (`jest ts-jest @types/jest` or `vitest`).
